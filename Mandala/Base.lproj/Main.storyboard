@@ -7,21 +7,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mood Selector View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MoodSelectorViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy8-HP-jn5">
+                                <rect key="frame" x="93.666666666666671" y="644" width="187.66666666666663" height="48"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ebQ-Vl-J4U"/>
+                                </constraints>
+                                <state key="normal" title="Add Mood">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pG-23-tI2">
                                 <rect key="frame" x="0.0" y="712" width="375" height="100"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RNt-W4-opR">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-pQ-l8N">
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-pQ-l8N">
                                             <rect key="frame" x="8" y="8" width="359" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="FEw-cl-UfQ"/>
@@ -42,10 +52,17 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3pG-23-tI2" secondAttribute="trailing" id="Bue-o2-hhB"/>
                             <constraint firstAttribute="bottom" secondItem="3pG-23-tI2" secondAttribute="bottom" id="C3R-Nu-Ps3"/>
+                            <constraint firstItem="3pG-23-tI2" firstAttribute="top" secondItem="sy8-HP-jn5" secondAttribute="bottom" constant="20" id="P4d-JT-GsI"/>
                             <constraint firstItem="3pG-23-tI2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jGz-E0-HWC"/>
+                            <constraint firstItem="sy8-HP-jn5" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="pox-fH-CCe"/>
+                            <constraint firstItem="sy8-HP-jn5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4t-UZ-kf0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addMoodButton" destination="sy8-HP-jn5" id="Z6r-AR-6vL"/>
+                        <outlet property="stackView" destination="uFV-pQ-l8N" id="xvW-w8-jFF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
