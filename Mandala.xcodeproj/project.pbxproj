@@ -20,6 +20,8 @@
 		BB43769C248301E40095CDBD /* UIColor+Mandala.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43769B248301E40095CDBD /* UIColor+Mandala.swift */; };
 		BB43769E248302FA0095CDBD /* UIImage+Mandala.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43769D248302FA0095CDBD /* UIImage+Mandala.swift */; };
 		BB4376A024831E110095CDBD /* UIButton+Mandala.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43769F24831E110095CDBD /* UIButton+Mandala.swift */; };
+		BB4376A2248322E60095CDBD /* MoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4376A1248322E60095CDBD /* MoodListViewController.swift */; };
+		BB879705248632580015D11A /* MoodsConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB879704248632580015D11A /* MoodsConfigurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		BB43769B248301E40095CDBD /* UIColor+Mandala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Mandala.swift"; sourceTree = "<group>"; };
 		BB43769D248302FA0095CDBD /* UIImage+Mandala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Mandala.swift"; sourceTree = "<group>"; };
 		BB43769F24831E110095CDBD /* UIButton+Mandala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Mandala.swift"; sourceTree = "<group>"; };
+		BB4376A1248322E60095CDBD /* MoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodListViewController.swift; sourceTree = "<group>"; };
+		BB879704248632580015D11A /* MoodsConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsConfigurable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,9 @@
 			children = (
 				BB4376672482F3310095CDBD /* AppDelegate.swift */,
 				BB4376692482F3310095CDBD /* SceneDelegate.swift */,
+				BB4376A1248322E60095CDBD /* MoodListViewController.swift */,
 				BB43766B2482F3310095CDBD /* MoodSelectorViewController.swift */,
+				BB879704248632580015D11A /* MoodsConfigurable.swift */,
 				BB4376972482F3FB0095CDBD /* Mood.swift */,
 				BB4376992482F6530095CDBD /* MoodEntry.swift */,
 				BB43769B248301E40095CDBD /* UIColor+Mandala.swift */,
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4376A2248322E60095CDBD /* MoodListViewController.swift in Sources */,
 				BB4376982482F3FB0095CDBD /* Mood.swift in Sources */,
 				BB43766C2482F3310095CDBD /* MoodSelectorViewController.swift in Sources */,
 				BB43769A2482F6530095CDBD /* MoodEntry.swift in Sources */,
@@ -282,6 +289,7 @@
 				BB43769C248301E40095CDBD /* UIColor+Mandala.swift in Sources */,
 				BB43769E248302FA0095CDBD /* UIImage+Mandala.swift in Sources */,
 				BB43766A2482F3310095CDBD /* SceneDelegate.swift in Sources */,
+				BB879705248632580015D11A /* MoodsConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
