@@ -128,7 +128,14 @@ class ImageSelector: UIControl {
             preconditionFailure( "The buttons and images do not match" )
         }
         
-        selectedIndex = buttonIndex
+        let selectionAnimator = UIViewPropertyAnimator( duration: 0.3,
+                                                        curve: .easeOut,
+                                                        animations: {
+                                                            self.selectedIndex = buttonIndex
+                                                            self.layoutIfNeeded()
+                                                        })
+        selectionAnimator.startAnimation()
+        
         sendActions( for: .valueChanged )
     }
 }
