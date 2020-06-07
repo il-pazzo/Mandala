@@ -66,7 +66,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy8-HP-jn5">
-                                <rect key="frame" x="93.666666666666671" y="644" width="187.66666666666663" height="48"/>
+                                <rect key="frame" x="93.666666666666671" y="636" width="187.66666666666663" height="48"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ebQ-Vl-J4U"/>
@@ -79,23 +79,27 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pG-23-tI2">
-                                <rect key="frame" x="0.0" y="712" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="704" width="375" height="108"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RNt-W4-opR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-pQ-l8N">
-                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8an-o5-kPR" userLabel="ImageSelector View" customClass="ImageSelector" customModule="Mandala" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="16" width="359" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="FEw-cl-UfQ"/>
+                                                <constraint firstAttribute="height" constant="50" id="J7b-P9-qmg"/>
                                             </constraints>
-                                        </stackView>
+                                            <connections>
+                                                <action selector="moodSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="NZL-L8-pKe"/>
+                                            </connections>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uFV-pQ-l8N" secondAttribute="bottom" id="I2V-WL-Svn"/>
-                                        <constraint firstItem="uFV-pQ-l8N" firstAttribute="top" secondItem="RNt-W4-opR" secondAttribute="top" constant="8" id="MQl-LT-JbL"/>
-                                        <constraint firstItem="uFV-pQ-l8N" firstAttribute="leading" secondItem="RNt-W4-opR" secondAttribute="leadingMargin" id="WRb-l9-i4q"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uFV-pQ-l8N" secondAttribute="trailing" id="Wwp-s1-v0i"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8an-o5-kPR" secondAttribute="trailing" id="Edp-Gy-NOX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8an-o5-kPR" secondAttribute="bottom" id="hlc-Mh-jFZ"/>
+                                        <constraint firstItem="8an-o5-kPR" firstAttribute="top" secondItem="RNt-W4-opR" secondAttribute="topMargin" constant="8" id="j9b-YM-2ff"/>
+                                        <constraint firstItem="8an-o5-kPR" firstAttribute="leading" secondItem="RNt-W4-opR" secondAttribute="leadingMargin" id="kfh-N1-iGe"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -118,12 +122,12 @@
                     </view>
                     <connections>
                         <outlet property="addMoodButton" destination="sy8-HP-jn5" id="Z6r-AR-6vL"/>
-                        <outlet property="stackView" destination="uFV-pQ-l8N" id="xvW-w8-jFF"/>
+                        <outlet property="moodSelector" destination="8an-o5-kPR" id="ZHP-lA-JTc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="132" y="137.4384236453202"/>
         </scene>
     </scenes>
 </document>
