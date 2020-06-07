@@ -17,6 +17,7 @@ class MoodSelectorViewController: UIViewController {
         didSet {
             currentMood = moods.first
             moodSelector.images = moods.map( { $0.image })
+            moodSelector.highlightColours = moods.map( { $0.color })
         }
     }
     

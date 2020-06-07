@@ -19,6 +19,11 @@ extension UIButton {
     func setMood( _ mood: Mood ) {
         
         setTitle( "I'm \(mood.name)", for: .normal )
-        backgroundColor = mood.color
+        
+        let selectionAnimator = UIViewPropertyAnimator( duration: 0.3,
+                                                        dampingRatio: 0.7 ) {
+            self.backgroundColor = mood.color
+        }
+        selectionAnimator.startAnimation()
     }
 }

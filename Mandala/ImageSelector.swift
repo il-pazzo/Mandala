@@ -22,23 +22,6 @@ class ImageSelector: UIControl {
         
         return stackView
     }()
-    
-    private let highlightView: UIView = {
-        
-        let view = UIView()
-        
-        view.backgroundColor = view.tintColor
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
-    private var highlightViewXConstraint: NSLayoutConstraint! {
-        didSet {
-            oldValue?.isActive = false
-            highlightViewXConstraint.isActive = true
-        }
-    }
 
     private var imageButtons: [UIButton] = [] {
         didSet {
@@ -75,12 +58,36 @@ class ImageSelector: UIControl {
                 selectedIndex = imageButtons.count - 1
             }
             
+            highlightView.backgroundColor = highlightColour(forIndex: selectedIndex)
+            
             let imageButton = imageButtons[ selectedIndex ]
             highlightViewXConstraint =
                 highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor )
         }
     }
     
+    var highlightColours: [UIColor] = [] {
+        didSet {
+            highlightView.backgroundColor = highlightColour(forIndex: selectedIndex)
+        }
+    }
+    
+    private let highlightView: UIView = {
+        
+        let view = UIView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private var highlightViewXConstraint: NSLayoutConstraint! {
+        didSet {
+            oldValue?.isActive = false
+            highlightViewXConstraint.isActive = true
+        }
+    }
+
     
     // MARK: - Code begins here
     
@@ -137,5 +144,14 @@ class ImageSelector: UIControl {
         selectionAnimator.startAnimation()
         
         sendActions( for: .valueChanged )
+    }
+    
+    private func highlightColour( forIndex index: Int ) -> UIColor {
+        
+        guard index >= 0  &&  index < highlightColours.count else {
+            return UIColor.blue.withAlphaComponent( 0.6 )
+        }
+        
+        return highlightColours[ index ]
     }
 }
