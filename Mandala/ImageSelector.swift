@@ -23,6 +23,23 @@ class ImageSelector: UIControl {
         return stackView
     }()
     
+    private let highlightView: UIView = {
+        
+        let view = UIView()
+        
+        view.backgroundColor = view.tintColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private var highlightViewXConstraint: NSLayoutConstraint! {
+        didSet {
+            oldValue?.isActive = false
+            highlightViewXConstraint.isActive = true
+        }
+    }
+
     private var imageButtons: [UIButton] = [] {
         didSet {
             oldValue.forEach { $0.removeFromSuperview() }
@@ -49,7 +66,20 @@ class ImageSelector: UIControl {
         }
     }
     
-    var selectedIndex = 0
+    var selectedIndex = 0 {
+        didSet {
+            if selectedIndex < 0 {
+                selectedIndex = 0
+            }
+            if selectedIndex >= imageButtons.count {
+                selectedIndex = imageButtons.count - 1
+            }
+            
+            let imageButton = imageButtons[ selectedIndex ]
+            highlightViewXConstraint =
+                highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor )
+        }
+    }
     
     
     // MARK: - Code begins here
@@ -68,15 +98,27 @@ class ImageSelector: UIControl {
         configureViewHierarchy()
     }
     
+    override func layoutSubviews() {
+        
+        super.layoutSubviews()
+        
+        highlightView.layer.cornerRadius = highlightView.bounds.width / 2.0
+    }
+    
     private func configureViewHierarchy() {
         
         addSubview( selectorStackView )
+        insertSubview( highlightView, belowSubview: selectorStackView )
         
         NSLayoutConstraint.activate([
             selectorStackView.leadingAnchor     .constraint(equalTo: leadingAnchor ),
             selectorStackView.trailingAnchor    .constraint(equalTo: trailingAnchor ),
             selectorStackView.topAnchor         .constraint(equalTo: topAnchor ),
-            selectorStackView.bottomAnchor      .constraint(equalTo: bottomAnchor )
+            selectorStackView.bottomAnchor      .constraint(equalTo: bottomAnchor ),
+            
+            highlightView.heightAnchor          .constraint(equalTo: highlightView.widthAnchor ),
+            highlightView.heightAnchor          .constraint(equalTo: heightAnchor, multiplier: 0.9 ),
+            highlightView.centerYAnchor         .constraint(equalTo: selectorStackView.centerYAnchor )
         ])
     }
     
