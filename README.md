@@ -1,6 +1,6 @@
 # Mandala
 
-Chapters 17 - 19 of "iOS Programming -- The Big Nerd Ranch Guide", 7th ed.
+Chapters 17 - 19 of ["iOS Programming -- The Big Nerd Ranch Guide", 7th ed.](https://www.amazon.com/gp/product/0135264022/)
 
 _Please note:_ This code is no substitution for the content of the book, which is exceptionally good.
 
