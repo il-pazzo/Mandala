@@ -65,6 +65,7 @@
 		BB4376A1248322E60095CDBD /* MoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodListViewController.swift; sourceTree = "<group>"; };
 		BB879704248632580015D11A /* MoodsConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsConfigurable.swift; sourceTree = "<group>"; };
 		BB879706248713A50015D11A /* ImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelector.swift; sourceTree = "<group>"; };
+		BBCBA96824B175D6009A6EF3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 		BB43765B2482F3310095CDBD = {
 			isa = PBXGroup;
 			children = (
+				BBCBA96824B175D6009A6EF3 /* README.md */,
 				BB4376662482F3310095CDBD /* Mandala */,
 				BB43767D2482F3330095CDBD /* MandalaTests */,
 				BB4376882482F3330095CDBD /* MandalaUITests */,
